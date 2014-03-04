@@ -5,7 +5,7 @@ Unsuprisingly, the context insensitive analysis leads to much less pricise resul
 context based analysis.  In this analysis all cvP relations are removed which leaves any String 
 object assigned to a single Record objects "name" field as a object that could be pointed to by any
 Record objects "name" field.  The exact same thing occurs for the Record field "emailAddr".  Therefore
-we lose precision here because contexts are lost just allowing us to reason that any Record's field
+we lose precision here because contexts are gone allowing us to reason that any Record's field
 could point to the same objects as any other Record's field.  We don't know when we assign a string 
 object to a specific Record field in this case, we just know that it occurs.  Thus all permutations 
 can occur.
@@ -14,12 +14,15 @@ hP(h1,f,h2) :- S(v1,f,v2), vP(v1,h1), vP(v2,h2).
 
 In the relation above we can see that hP now will produce a pointer between heap objects if at some
 point there is a set between the fields (ex. Record.name = name).  This can now occur between any Record
-objects that transitively get set with to the same type of field.  
+objects that transitively get set with to the same type of field.  Variable Record.name gets set to "Joe",
+"Mary", "Bob", and "Jane" respectivly-S(v1,f,v2).  No context is associated and vP sets "joeRecord",
+"bobRecord", "maryRecord", "janeRecord", and "joeAltRecord" to point to all of there respecive heap objects.
+After convergence all of names can possibly point to all records in context insensitive analysis. Similar reasoning
+follows for Record.emailAddr.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Output:
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 global(null) || AddressBook/joe || AddressBook.java:37 Concrete: String @ 1
 global(null) || AddressBook/joeEmail || AddressBook.java:38 Concrete: String @ 2
 global(null) || AddressBook/joeAltEmail || AddressBook.java:39 Concrete: String @ 3
