@@ -1,0 +1,480 @@
+base classpath directories: ['.']
+Deleting file results/callgraph
+Deleting file results/bddinfo
+Deleting file results/fielddomains.pa
+Deleting file results/IE0.bdd
+Deleting file results/vP0.bdd
+Deleting file results/hP0.bdd
+Deleting file results/L.bdd
+Deleting file results/S.bdd
+Deleting file results/A.bdd
+Deleting file results/vT.bdd
+Deleting file results/hT.bdd
+Deleting file results/aT.bdd
+Deleting file results/cha.bdd
+Deleting file results/actual.bdd
+Deleting file results/formal.bdd
+Deleting file results/mV.bdd
+Deleting file results/mC.bdd
+Deleting file results/mI.bdd
+Deleting file results/Mret.bdd
+Deleting file results/Mthr.bdd
+Deleting file results/Iret.bdd
+Deleting file results/Ithr.bdd
+Deleting file results/sync.bdd
+Deleting file results/mSync.bdd
+Deleting file results/stringConstant.bdd
+Deleting file results/overridesEqualsOrHashcode.bdd
+Deleting file results/IEfilter.bdd
+Deleting file results/roots.bdd
+Deleting file results/var.map
+Deleting file results/heap.map
+Deleting file results/type.map
+Deleting file results/field.map
+Deleting file results/invoke.map
+Deleting file results/name.map
+Deleting file results/method.map
+Deleting file results/rbddinfo
+Deleting file results/IEnum.bdd
+Deleting file results/IEcs.bdd
+Deleting file results/cA.bdd
+Deleting file results/string.map
+Deleting file results/map_H0_H0.bdd
+Deleting file results/map_I0_H0.bdd
+Deleting file results/cvP.bdd
+Deleting file results/hP.tuples
+Deleting file results/vP.tuples
+Deleting file results/IE.tuples
+Deleting file results/hALIAS.tuples
+Deleting directory results/
+Generating relations...
+java -cp ".:./PQL-0.2.jar:." -Xmx1024m -Dpa.dumppath=results/ -Dpa.specialmapinfo=yes -Dpa.dumpunmunged=yes -Dpa.signaturesinlocs=yes joeq.Main.GenRelations AddressBook
+Warning: class library version 1.6.0_27-b27 is not yet supported, trying default sun13_
+Discovering call graph first...
+Adding default static variables.
+Using variable ordering C_N_F_I_I2_M2_M_Z_V2xV1_T1_H2_T2_H1_STR
+Start reordering
+Garbage collection #1: 2500009 nodes / 2499326 free / 0.069s / 0.069s total
+End reordering. Went from 683 to 683 nodes, gain = 0% (0.299 sec)
+Time spent initializing: 0.253
+Discovering call graph, iteration 1: 5 methods.
+Discovering call graph, iteration 2: 14 methods.
+Discovering call graph, iteration 3: 18 methods.
+Discovering call graph, iteration 4: 20 methods.
+Discovering call graph, iteration 5: 21 methods.
+Discovering call graph, iteration 6: 21 methods.
+Time spent solving: 0.305
+V = 204, bits = 8
+I = 28, bits = 5
+H = 105, bits = 7
+F = 61, bits = 6
+T = 34, bits = 6
+N = 3, bits = 2
+M = 24, bits = 5
+C = 12, bits = 4
+Writing call graph...
+Time spent writing: 0.015
+Finished discovering call graph.
+Loading initial call graph...done. (0.003 seconds)
+Adding default static variables.
+Counting size of call graph...
+Methods=21 Bytecodes=405 Call sites=224
+Vars=119 Heaps=24 Classes=17 Fields=19
+ V=9 I=8 H=9 F=7 T=7 N=8 M=6 VC=0
+done. (0.001 seconds)
+Could not load BDD package buddy: Can't load library: /afs/.ir.stanford.edu/users/j/i/jithinpt/Documents/Acads/cs_243/cs243_lab3/lab3/libbuddy.so
+Using variable ordering C_N_F_I_I2_M2_M_Z_V2xV1_T1_H2_T2_H1_STR
+Start reordering
+Garbage collection #1: 2500009 nodes / 2499641 free / 0.078s / 0.078s total
+End reordering. Went from 368 to 368 nodes, gain = 0% (0.372 sec)
+Calculating call graph relation...done. (0.001 seconds)
+Time spent initializing: 0.031
+Dumping to path results/
+Dump took 0.123s
+
+java -mx600m -Dbasedir=results/ -Dresultdir=results/ -Dpa.discovercallgraph=yes -cp ".:./PQL-0.2.jar:." net.sf.bddbddb.BuildEquivalenceRelation H0 H0 heap.map I0 invoke.map
+Initializing BDD library (500000 nodes, cache size 125000, min free 0.2%)
+Could not load BDD package buddy: Can't load library: /afs/.ir.stanford.edu/users/j/i/jithinpt/Documents/Acads/cs_243/cs243_lab3/lab3/libbuddy.so
+Using BDD library JFactory 445
+WARNING: Cannot load mapfile "results/class.map", skipping.
+Domains: {STR=STR, T=T, VC=VC, F=F, V=V, HC=HC, C=C, M=M, N=N, H=H, I=I, Z=Z}
+H0 [0..105] corresponds to H0[0..105]
+Result: 8 nodes
+Garbage collection #1: 1009 nodes / 208 free / 0.004s / 0.004s total
+Resizing node table from 1009 to 2017
+Garbage collection #2: 2017 nodes / 581 free / 0.003s / 0.007s total
+Garbage collection #3: 2017 nodes / 791 free / 0.002s / 0.009s total
+I0 [0..28] corresponds to H0[106..134]
+Result: 184 nodes
+
+De-munging names ...
+Preparing for running context-sensitive pointer analysis ...
+Counting contexts...
+java -cp "./PQL-0.2.jar:." -mx600m -Dlearnbestorder=n -Dsingleignore=yes -Dbasedir=./results/ -Dbddcache=1500000 -Dbddnodes=40000000 -Dnumberingtype=scc -Dpa.clinit=no -Dpa.filternull=yes -Dpa.unknowntypes=no net.sf.bddbddb.Solver number.dtl
+Initializing BDD library (40000000 nodes, cache size 1500000, min free 0.2%)
+Could not load BDD package buddy: Can't load library: /afs/.ir.stanford.edu/users/j/i/jithinpt/Documents/Acads/cs_243/cs243_lab3/lab3/libbuddy.so
+Using BDD library JFactory 445
+Opening Datalog program "number.dtl"
+12 field domains.
+5 relations.
+2 rules.
+Splitting rules: done.
+Initializing solver: Adding missing domain "I1" to bddvarorder.
+Adding missing domain "STR0" to bddvarorder.
+Eliminating unused domain "C1" from bddvarorder.
+Eliminating unused domain "G0" from bddvarorder.
+Setting variable ordering to STR0_C0_N0_F0_I1_I0_M1_M0_V1xV0_VC1xVC0_T0_Z0_T1_H0_H1, Start reordering
+End reordering. Went from 425 to 403 nodes, gain = 5% (0.05 sec)
+done.
+126,125,124,123,122,121,120,119,118,117,116,115,114,113,112,111,104,103,102,101,100,99,98,97,96,95,94,93,86,85,84,83,82,81,80,79,64,63,62,61,60,59,58,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,110,109,108,107,106,105,92,91,90,89,88,87,17,8,16,7,15,6,14,5,13,4,12,3,11,2,10,1,9,0,128,127,71,70,69,68,67,66,65,57,56,55,54,53,52,78,77,76,75,74,73,72,42,41,40,39,38,37,36,35,34,51,50,49,48,47,46,45,44,43,
+Resizing node table from 1009 to 39999983
+Not enough memory, cannot grow node table size.
+Trials filename=trials_number.xml
+done.
+Loading initial relations: Loading BDD from file: mI.bdd 122 nodes, 28.0 elements.
+Loading BDD from file: IE0.bdd 93 nodes, 28.0 elements.
+Loading BDD from file: roots.bdd 7 nodes, 5.0 elements.
+done. (72 ms)
+Stratifying: 
+Discovering stratum, 0 SCCs visited so far
+Finished discovery of 11 SCCs in 1 strata
+done. (9 ms)
+Solving: 
+list1:
+  list2:
+    mI0(m:M0,i:I0) :- mI(m:M0,i:I0,_:N0).
+    IEnum(i,m,vc2,vc1) :- roots(m), mI0(m,i), IE0(i,m).
+
+Applying inference rule:
+   mI0(m:M0,i:I0) :- mI(m:M0,i:I0,_:N0). (1)
+Applying numbering rule:
+   IEnum(i,m,vc2,vc1) :- roots(m), mI0(m,i), IE0(i,m).
+Resizing node table from 1009 to 3023
+Done counting paths (115 ms, number of paths = 13 (4 bits)
+
+Requires 13 paths.
+Numbering contexts...
+java -cp "./PQL-0.2.jar:." -mx600m -Dlearnbestorder=n -Dsingleignore=yes -Dbasedir=./results/ -Dbddcache=1500000 -Dbddnodes=40000000 -Dnumberingtype=scc -Dpa.clinit=no -Dpa.filternull=yes -Dpa.unknowntypes=no net.sf.bddbddb.Solver numbering.dtl
+Initializing BDD library (40000000 nodes, cache size 1500000, min free 0.2%)
+Could not load BDD package buddy: Can't load library: /afs/.ir.stanford.edu/users/j/i/jithinpt/Documents/Acads/cs_243/cs243_lab3/lab3/libbuddy.so
+Using BDD library JFactory 445
+Opening Datalog program "numbering.dtl"
+12 field domains.
+5 relations.
+2 rules.
+Splitting rules: done.
+Initializing solver: Adding missing domain "I1" to bddvarorder.
+Adding missing domain "STR0" to bddvarorder.
+Eliminating unused domain "C1" from bddvarorder.
+Eliminating unused domain "G0" from bddvarorder.
+Setting variable ordering to STR0_C0_N0_F0_I1_I0_M1_M0_V1xV0_VC1xVC0_T0_Z0_T1_H0_H1, Start reordering
+End reordering. Went from 446 to 427 nodes, gain = 4% (0.043 sec)
+done.
+126,125,124,123,122,121,120,119,118,117,116,115,114,113,112,111,104,103,102,101,100,99,98,97,96,95,94,93,86,85,84,83,82,81,80,79,64,63,62,61,60,59,58,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,110,109,108,107,106,105,92,91,90,89,88,87,17,8,16,7,15,6,14,5,13,4,12,3,11,2,10,1,9,0,134,130,133,129,132,128,131,127,71,70,69,68,67,66,65,57,56,55,54,53,52,78,77,76,75,74,73,72,42,41,40,39,38,37,36,35,34,51,50,49,48,47,46,45,44,43,
+Resizing node table from 1009 to 39999983
+Not enough memory, cannot grow node table size.
+Trials filename=trials_numbering.xml
+done.
+Loading initial relations: Loading BDD from file: mI.bdd 122 nodes, 28.0 elements.
+Loading BDD from file: IE0.bdd 93 nodes, 28.0 elements.
+Loading BDD from file: roots.bdd 7 nodes, 5.0 elements.
+done. (72 ms)
+Stratifying: 
+Discovering stratum, 0 SCCs visited so far
+Finished discovery of 11 SCCs in 1 strata
+done. (9 ms)
+Solving: 
+list1:
+  list2:
+    mI0(m:M0,i:I0) :- mI(m:M0,i:I0,_:N0).
+    IEnum(i,m,vc2,vc1) :- roots(m), mI0(m,i), IE0(i,m).
+
+Applying inference rule:
+   mI0(m:M0,i:I0) :- mI(m:M0,i:I0,_:N0). (1)
+Applying numbering rule:
+   IEnum(i,m,vc2,vc1) :- roots(m), mI0(m,i), IE0(i,m).
+Resizing node table from 1009 to 3023
+Done counting paths (111 ms, number of paths = 13 (4 bits)
+Time spent: 120 ms
+done. (322 ms)
+SOLVE_TIME=322
+MAX_NODES=3023
+FINAL_NODES=2135
+Rule IEnum(i,m,vc2,vc1) :- roots(m), mI0(m,i), IE0(i,m).
+   Time: 120 ms
+Rule mI0(m:M0,i:I0) :- mI(m:M0,i:I0,_:N0).
+   Updates: 1
+   Time: 200 ms
+   Longest Iteration: 0 (0 ms)
+Saving results: Dumping BDD for IEnum
+Relation IEnum: 245 nodes, 48.0 elements (I0,M0,VC0,VC1)
+done. (6 ms)
+
+Running analysis in file ...
+java -cp "./PQL-0.2.jar:." -mx600m -Dlearnbestorder=n -Dsingleignore=yes -Dbasedir=./results/ -Dbddcache=1500000 -Dbddnodes=40000000 -Dnumberingtype=scc -Dpa.clinit=no -Dpa.filternull=yes -Dpa.unknowntypes=no net.sf.bddbddb.Solver pacs_field_insensitive.dtl
+Initializing BDD library (40000000 nodes, cache size 1500000, min free 0.2%)
+Could not load BDD package buddy: Can't load library: /afs/.ir.stanford.edu/users/j/i/jithinpt/Documents/Acads/cs_243/cs243_lab3/lab3/libbuddy.so
+Using BDD library JFactory 445
+Opening Datalog program "pacs_field_insensitive.dtl"
+12 field domains.
+24 relations.
+11 rules.
+Splitting rules: done.
+Initializing solver: Adding missing domain "I1" to bddvarorder.
+Adding missing domain "STR0" to bddvarorder.
+Eliminating unused domain "G0" from bddvarorder.
+Setting variable ordering to STR0_C0_N0_F0_I1_I0_M1_M0_V1xV0_VC1xVC0_T0_Z0_T1_H0_H1, Start reordering
+End reordering. Went from 756 to 658 nodes, gain = 12% (0.069 sec)
+done.
+126,125,124,123,122,121,120,119,118,117,116,115,114,113,112,111,104,103,102,101,100,99,98,97,96,95,94,93,86,85,84,83,82,81,80,79,64,63,62,61,60,59,58,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,110,109,108,107,106,105,92,91,90,89,88,87,17,8,16,7,15,6,14,5,13,4,12,3,11,2,10,1,9,0,134,130,133,129,132,128,131,127,71,70,69,68,67,66,65,57,56,55,54,53,52,78,77,76,75,74,73,72,42,41,40,39,38,37,36,35,34,51,50,49,48,47,46,45,44,43,
+Resizing node table from 1009 to 39999983
+Not enough memory, cannot grow node table size.
+Trials filename=trials_pacs_field_insensitive.xml
+done.
+Loading initial relations: Loading BDD from file: vP0.bdd Resizing node table from 1009 to 3023
+594 nodes, 124.0 elements.
+Loading BDD from file: hP0.bdd Warning: ./results/hP0.bdd is zero.
+0 nodes, 0.0 elements.
+Loading BDD from file: A.bdd 137 nodes, 40.0 elements.
+Loading BDD from file: S.bdd 905 nodes, 87.0 elements.
+Loading BDD from file: L.bdd 220 nodes, 15.0 elements.
+Loading BDD from file: actual.bdd Resizing node table from 3023 to 9067
+270 nodes, 56.0 elements.
+Loading BDD from file: formal.bdd 182 nodes, 35.0 elements.
+Loading BDD from file: mI.bdd 122 nodes, 28.0 elements.
+Loading BDD from file: IE0.bdd 93 nodes, 28.0 elements.
+Loading BDD from file: vT.bdd 286 nodes, 204.0 elements.
+Loading BDD from file: hT.bdd 261 nodes, 105.0 elements.
+Loading BDD from file: aT.bdd 194 nodes, 141.0 elements.
+Loading BDD from file: cha.bdd 52 nodes, 5.0 elements.
+Loading BDD from file: mV.bdd 181 nodes, 115.0 elements.
+Loading BDD from file: Mret.bdd 15 nodes, 1.0 elements.
+Loading BDD from file: Iret.bdd 17 nodes, 1.0 elements.
+Loading BDD from file: IEnum.bdd 245 nodes, 48.0 elements.
+done. (174 ms)
+Stratifying: 
+Note: the following relations are unused:
+    [hP0, mI, cha, mV]
+Note: the following rules are unused:
+Discovering stratum, 0 SCCs visited so far
+Finished discovery of 45 SCCs in 1 strata
+done. (20 ms)
+Solving: 
+list1:
+  list2:
+    vPfilter(v:V0,h:H0) :- vT(v:V0,tv:T0), aT(tv:T0,th:T1), hT(h:H0,th:T1).
+    IEcs(vc2:VC1,i:I0,vc1:VC0,m:M0) :- IE0(i:I0,m:M0), IEnum(i:I0,m:M0,vc2:VC1,vc1:VC0).
+    IE(i:I0,m:M0) :- IEcs(_:VC0,i:I0,_:VC1,m:M0).
+    cA(vc2:VC0,v2:V0,vc1:VC1,v1:V1) :- Mret(m:M0,v1:V1), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), Iret(i:I0,v2:V0).
+    cA(vc1:VC1,v1:V0,vc2:VC0,v2:V1) :- formal(m:M0,z:Z0,v1:V0), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), actual(i:I0,z:Z0,v2:V1).
+    cA(_,v1:V0,_,v2:V1) :- A(v1:V0,v2:V1).
+    cvP(_,v:V0,h:H0) :- vP0(v:V0,h:H0).
+    loop3:
+      loop5:
+        cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0).
+      cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0).
+      hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1).
+      cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1).
+      cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1).
+    vP(v:V0,h:H0) :- cvP(_:VC0,v:V0,h:H0).
+
+Applying inference rule:
+   vPfilter(v:V0,h:H0) :- vT(v:V0,tv:T0), aT(tv:T0,th:T1), hT(h:H0,th:T1). (1)
+Applying inference rule:
+   IEcs(vc2:VC1,i:I0,vc1:VC0,m:M0) :- IE0(i:I0,m:M0), IEnum(i:I0,m:M0,vc2:VC1,vc1:VC0). (1)
+Applying inference rule:
+   IE(i:I0,m:M0) :- IEcs(_:VC0,i:I0,_:VC1,m:M0). (1)
+Applying inference rule:
+   cA(vc2:VC0,v2:V0,vc1:VC1,v1:V1) :- Mret(m:M0,v1:V1), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), Iret(i:I0,v2:V0). (1)
+Applying inference rule:
+   cA(vc1:VC1,v1:V0,vc2:VC0,v2:V1) :- formal(m:M0,z:Z0,v1:V0), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), actual(i:I0,z:Z0,v2:V1). (1)
+Applying inference rule:
+   cA(_,v1:V0,_,v2:V1) :- A(v1:V0,v2:V1). (1)
+Applying inference rule:
+   cvP(_,v:V0,h:H0) :- vP0(v:V0,h:H0). (1)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (1)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (2)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (3)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (4)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (5)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (6)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (1)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (1)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (1)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (1)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (7)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (8)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (9)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (2)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (2)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (2)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (2)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (10)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (11)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (12)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (3)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (3)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (3)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (3)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (13)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (14)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (15)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (4)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (4)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (4)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (4)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (16)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (17)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (5)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (5)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (5)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (5)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (18)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (19)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (6)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (6)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (6)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (6)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (20)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (7)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (7)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (7)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (7)
+Applying inference rule:
+   cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0). (inc) (21)
+Applying inference rule:
+   cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0). (inc) (8)
+Applying inference rule:
+   hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1). (inc) (8)
+Applying inference rule:
+   cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1). (inc) (8)
+Applying inference rule:
+   cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1). (inc) (8)
+Applying inference rule:
+   vP(v:V0,h:H0) :- cvP(_:VC0,v:V0,h:H0). (1)
+done. (424 ms)
+SOLVE_TIME=424
+MAX_NODES=9067
+FINAL_NODES=8905
+Rule cvP(_,v:V0,h:H0) :- vP0(v:V0,h:H0).
+   Updates: 1
+   Time: 0 ms
+   Longest Iteration: 0 (0 ms)
+Rule cA(_,v1:V0,_,v2:V1) :- A(v1:V0,v2:V1).
+   Updates: 1
+   Time: 0 ms
+   Longest Iteration: 0 (0 ms)
+Rule cA(vc2:VC0,v2:V0,vc1:VC1,v1:V1) :- Mret(m:M0,v1:V1), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), Iret(i:I0,v2:V0).
+   Updates: 1
+   Time: 0 ms
+   Longest Iteration: 0 (0 ms)
+Rule cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0) :- L(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0).
+   Updates: 8
+   Time: 0 ms
+   Longest Iteration: 0 (0 ms)
+Rule vP(v:V0,h:H0) :- cvP(_:VC0,v:V0,h:H0).
+   Updates: 1
+   Time: 1 ms
+   Longest Iteration: 0 (0 ms)
+Rule cvP(vc1:VC0,v2:V1,h2:H1) :- cvP_8_1(v2:V1,vc1:VC0,h2:H1), vPfilter(v2:V1,h2:H1).
+   Updates: 8
+   Time: 2 ms
+   Longest Iteration: 0 (0 ms)
+Rule IE(i:I0,m:M0) :- IEcs(_:VC0,i:I0,_:VC1,m:M0).
+   Updates: 1
+   Time: 2 ms
+   Longest Iteration: 0 (0 ms)
+Rule cA(vc1:VC1,v1:V0,vc2:VC0,v2:V1) :- formal(m:M0,z:Z0,v1:V0), IEcs(vc2:VC0,i:I0,vc1:VC1,m:M0), actual(i:I0,z:Z0,v2:V1).
+   Updates: 1
+   Time: 3 ms
+   Longest Iteration: 0 (0 ms)
+Rule cvP_8_1(v2:V1,vc1:VC0,h2:H1) :- cvP_8_0(f:F0,v2:V1,vc1:VC0,h1:H0), hP(h1:H0,f:F0,h2:H1).
+   Updates: 8
+   Time: 3 ms
+   Longest Iteration: 0 (0 ms)
+Rule vPfilter(v:V0,h:H0) :- vT(v:V0,tv:T0), aT(tv:T0,th:T1), hT(h:H0,th:T1).
+   Updates: 1
+   Time: 49 ms
+   Longest Iteration: 0 (0 ms)
+Rule cvP(vc1:VC0,v1:V0,h:H0) :- cA(vc1:VC0,v1:V0,vc2:VC1,v2:V1), cvP(vc2:VC1,v2:V1,h:H0), vPfilter(v1:V0,h:H0).
+   Updates: 21
+   Time: 68 ms
+   Longest Iteration: 0 (0 ms)
+Rule hP(h1:H0,f:F0,h2:H1) :- S(v1:V0,f:F0,v2:V1), cvP(vc1:VC0,v1:V0,h1:H0), cvP(vc1:VC0,v2:V1,h2:H1).
+   Updates: 8
+   Time: 80 ms
+   Longest Iteration: 0 (0 ms)
+Rule IEcs(vc2:VC1,i:I0,vc1:VC0,m:M0) :- IE0(i:I0,m:M0), IEnum(i:I0,m:M0,vc2:VC1,vc1:VC0).
+   Updates: 1
+   Time: 208 ms
+   Longest Iteration: 0 (0 ms)
+Saving results: SIZE OF hP: 100.
+Dumping BDD for IEcs
+Relation IEcs: 243 nodes, 48.0 elements (I0,M0,VC0,VC1)
+Dumping BDD for cA
+Relation cA: 493 nodes, 10343.0 elements (V0,V1,VC0,VC1)
+Dumping BDD for cvP
+Relation cvP: 726 nodes, 2632.0 elements (V0,H0,VC0)
+Dumping tuples for hP
+Relation hP: 1048 nodes, 100.0 elements (H0,H1,F0)
+./results/hP.tuples domains { H0 F0 H1 } = 1048 nodes, 100.0 elements
+Done writing 100 lines.
+Dumping tuples for vP
+Relation vP: 711 nodes, 231.0 elements (V0,H0)
+./results/vP.tuples domains { V0 H0 } = 711 nodes, 231.0 elements
+Done writing 231 lines.
+Dumping tuples for IE
+Relation IE: 93 nodes, 28.0 elements (I0,M0)
+./results/IE.tuples domains { I0 M0 } = 93 nodes, 28.0 elements
+Done writing 28 lines.
+done. (108 ms)
+
+Done
