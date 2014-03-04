@@ -1,132 +1,86 @@
-# H0:9 H1:9
-0 3 
-0 33 
-0 84 
-0 85 
-0 86 
-0 87 
-0 88 
-0 89 
-0 90 
-0 91 
-0 92 
-0 93 
-0 94 
-0 100 
-0 101 
-3 37 
-3 47 
-4 1 
-4 38 
-4 63 
-4 76 
-5 24 
-5 79 
-7 34 
-14 4 
-14 26 
-14 30 
-14 45 
-14 70 
-16 9 
-16 54 
-16 62 
-16 72 
-19 68 
-19 78 
-24 28 
-24 59 
-28 15 
-29 60 
-30 13 
-33 5 
-33 10 
-33 61 
-34 66 
-35 77 
-36 7 
-36 80 
-40 19 
-40 29 
-40 71 
-40 81 
-44 55 
-46 56 
-46 65 
-47 12 
-47 53 
-52 49 
-53 11 
-61 23 
-61 57 
-61 74 
-61 82 
-65 51 
-65 52 
-68 8 
-68 16 
-68 31 
-68 35 
-68 36 
-72 44 
-80 18 
-82 14 
-82 83 
-84 39 
-84 40 
-84 46 
-94 103 
-95 85 
-95 86 
-95 87 
-95 88 
-95 89 
-95 90 
-95 91 
-95 92 
-95 93 
-96 85 
-97 85 
-98 85 
-99 85 
-96 86 
-96 87 
-97 86 
-97 87 
-98 86 
-98 87 
-99 86 
-99 87 
-96 88 
-96 89 
-96 90 
-96 91 
-97 88 
-97 89 
-97 90 
-97 91 
-98 88 
-98 89 
-98 90 
-98 91 
-99 88 
-99 89 
-99 90 
-99 91 
-96 92 
-96 93 
-97 92 
-97 93 
-98 92 
-98 93 
-99 92 
-99 93 
-102 102 
-102 104 
-103 102 
-104 95 
-104 97 
-104 98 
-104 99 
-104 102 
-104 104 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Comparison:
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+size of hP relation = 131
+-this is an increase from the original output size of 100
+
+First and foremeost  it differs from the original output in that no fields are specified or listed
+for each Record (Male/Female) object.  This is obviously what we want as we want our analysis to 
+be field insensitive.  More importantly the analysis lists that every object of type String can 
+be assigned to any Record object (only has fields that are strings).  Again this is what we 
+were looking for because in this case the fields do not matter that are assigned to the object,
+therefore the object could possibly be assinged to all fields with the corresponding type.
+
+hP(h1,h2) :- S(v1,_,v2), cvP(vc1,v1,h1), cvP(vc1,v2,h2). 
+cvP(vc1,v2,h2) :- L(v1,_,v2), cvP(vc1,v1,h1), hP(h1,h2), vPfilter(v2,h2).
+
+The above two lines are at the heart of what causes this loss of precisison.  cvP in this case
+can be assigned will contain all of the contexts for any Record object.  In assigning this to 
+hP, S(v1,f,v2) used to filter out of the contexts to make sure that the fields match but 
+in field insensitive analysis any context where the field types match (vPfilter) are 
+now potential objects that the Record object can point to on the heap.  
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Output:
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+global(null) || AddressBook.java:37 Concrete: String @ 1
+global(null) || AddressBook.java:38 Concrete: String @ 2
+global(null) || AddressBook.java:39 Concrete: String @ 3
+global(null) || AddressBook.java:41 Concrete: String @ 4
+global(null) || AddressBook.java:42 Concrete: String @ 5
+global(null) || AddressBook.java:44 Concrete: String @ 6
+global(null) || AddressBook.java:45 Concrete: String @ 7
+global(null) || AddressBook.java:47 Concrete: String @ 8
+global(null) || AddressBook.java:48 Concrete: String @ 9
+global(null) || AddressBook.java:61 Concrete: AddressBook @ 1
+AddressBook.java:61 Concrete: AddressBook @ 1 || AddressBook.java:53 Concrete: LinkedList @ 3
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:37 Concrete: String @ 1
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:38 Concrete: String @ 2
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:39 Concrete: String @ 3
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:41 Concrete: String @ 4
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:42 Concrete: String @ 5
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:44 Concrete: String @ 6
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:45 Concrete: String @ 7
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:47 Concrete: String @ 8
+AddressBook.java:63 Concrete: MaleRecord @ 6 || AddressBook.java:48 Concrete: String @ 9
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:37 Concrete: String @ 1
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:37 Concrete: String @ 1
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:37 Concrete: String @ 1
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:37 Concrete: String @ 1
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:38 Concrete: String @ 2
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:39 Concrete: String @ 3
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:38 Concrete: String @ 2
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:39 Concrete: String @ 3
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:38 Concrete: String @ 2
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:39 Concrete: String @ 3
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:38 Concrete: String @ 2
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:39 Concrete: String @ 3
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:41 Concrete: String @ 4
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:42 Concrete: String @ 5
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:44 Concrete: String @ 6
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:45 Concrete: String @ 7
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:41 Concrete: String @ 4
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:42 Concrete: String @ 5
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:44 Concrete: String @ 6
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:45 Concrete: String @ 7
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:41 Concrete: String @ 4
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:42 Concrete: String @ 5
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:44 Concrete: String @ 6
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:45 Concrete: String @ 7
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:41 Concrete: String @ 4
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:42 Concrete: String @ 5
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:44 Concrete: String @ 6
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:45 Concrete: String @ 7
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:47 Concrete: String @ 8
+AddressBook.java:64 Concrete: MaleRecord @ 13 || AddressBook.java:48 Concrete: String @ 9
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:47 Concrete: String @ 8
+AddressBook.java:66 Concrete: FemaleRecord @ 20 || AddressBook.java:48 Concrete: String @ 9
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:47 Concrete: String @ 8
+AddressBook.java:67 Concrete: FemaleRecord @ 27 || AddressBook.java:48 Concrete: String @ 9
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:47 Concrete: String @ 8
+AddressBook.java:69 Concrete: MaleRecord @ 34 || AddressBook.java:48 Concrete: String @ 9
+AddressBook.java:53 Concrete: LinkedList @ 3 || LinkedList.java:95 Concrete: LinkedList$Entry @ 3
+LinkedList.java:795 Concrete: LinkedList$Entry @ 1 || AddressBook.java:63 Concrete: MaleRecord @ 6
+LinkedList.java:795 Concrete: LinkedList$Entry @ 1 || AddressBook.java:66 Concrete: FemaleRecord @ 20
+LinkedList.java:795 Concrete: LinkedList$Entry @ 1 || AddressBook.java:67 Concrete: FemaleRecord @ 27
+LinkedList.java:795 Concrete: LinkedList$Entry @ 1 || AddressBook.java:69 Concrete: MaleRecord @ 34
