@@ -20,6 +20,33 @@ hP, S(v1,f,v2) used to filter out of the contexts to make sure that the fields m
 in field insensitive analysis any context where the field types match (vPfilter) are 
 now potential objects that the Record object can point to on the heap.  
 
+Below is an example of the description above:
+
+[NOTE: Following is the convention I'm using: 
+ joe => the variable that points to the string "joe"
+ "joe" => the heap object that contains the string "joe"
+ globalV => the variable that points to the global heap object
+ globalH => the global heap object
+]
+
+Case 1: Field sensitive analysis
+When the MaleRecord constructor is invoked to create joeRecord, this is what happens internally:
+  (i) A temporary variable, say X, is assigned the value provided for the name field:
+       X = globalH.joe // note that static strings are considered as fields of globalH
+  (ii) newMaleRecordObj.name = X // newMaleRecordObj is the heap object that would be returned by the constructor and then assigned to joeRecord
+  
+Now, (i) is an instance of a load operation, ie, L(v1, f, v2) where v1 == globalV, f == joe, v2 == X
+This load tuple when used in the cvP rule will result in the following tuple:  cvP(X, "joe")
+
+Next, this newly generated cvP tuple, when used in the hP rule would generate the tuple (newMaleRecordObj, name, "joe")
+
+ Case 2: Field insensitive analysis
+In this case, we ignore the field parameter, f, in all the rules, including loads and stores.
+Thus, if you apply the field-insensitive cvP rule in conjunction with (i) above, you would get multiple tuples of the following form (instead of just 1 as in the previous case):
+   (X, "joe"), (X, "mary"), etc. 
+
+And hence, these in would in turn introduce extraneous hP tuples when used in the field-insentive hP rule.
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 Output:
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
