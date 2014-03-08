@@ -1,3 +1,18 @@
+##########################
+# Summary of the results #
+##########################
+
+* The useful results that this analysis provided are the following facts:
+  * joeRecord.name aliases to joeAltRecord.name
+  * maryRecord.email aliases to janeRecord.email
+  In both cases the corresponding records were created by passing in the same 
+  value for the corresponding parameter in the constructor.
+
+* However, most of the other results provided any useful information.
+  A large number of them simply state obvious facts such joeRecord.name aliases to joeRecord.name.
+
+##########################
+
 global(null) || AddressBook/joe || global(null) || AddressBook/joe
 AddressBook.java:63 Concrete: MaleRecord @ 6 || Record/name || global(null) || AddressBook/joe
 AddressBook.java:69 Concrete: MaleRecord @ 34 || Record/name || global(null) || AddressBook/joe
