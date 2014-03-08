@@ -3,13 +3,19 @@
 ##########################
 
 * The useful results that this analysis provided are the following facts:
-  * joeRecord.name aliases to joeAltRecord.name
-  * maryRecord.email aliases to janeRecord.email
+  * joeRecord.name may alias to joeAltRecord.name
+  * maryRecord.email may alias to janeRecord.email
   In both cases the corresponding records were created by passing in the same 
-  value for the corresponding parameter in the constructor.
+  value for the corresponding parameter in the constructor. This, as mentioned in
+  problem2, can be used to find bugs relating to two distinct records being constructed with
+  the same value(s)
 
-* However, most of the other results provided any useful information.
-  A large number of them simply state obvious facts such joeRecord.name aliases to joeRecord.name.
+  Additionally, rules such as "joeRecord.joe may alias to global(null).joe" may also prove 
+  useful in some scenarios. For example, this can be used to ensure that joeRecord cannot possibly
+  be constructed with the wrong set of values. 
+
+* However, most of the other results dont provide any useful information.
+  A large number of them simply state obvious facts such as joeRecord.name aliases to joeRecord.name.
 
 ##########################
 
